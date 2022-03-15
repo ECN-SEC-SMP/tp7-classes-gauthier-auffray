@@ -24,6 +24,9 @@ public:
     // methodes
     void translater(const point_t);
     void translater(const int, const int);
+
+    // surcharge operators
+    point_t operator+=(const point_t);
 };
 
 #endif

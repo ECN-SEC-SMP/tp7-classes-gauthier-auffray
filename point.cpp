@@ -25,3 +25,9 @@ void point_t::translater(const int abs, const int ord) {
     this->x += abs;
     this->y += ord;
 }
+
+// surcharge operators
+point_t point_t::operator+=(const point_t pt) {
+    this->translater(pt);
+    return *this;
+}
