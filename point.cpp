@@ -15,6 +15,11 @@ point_t::point_t(const point_t& pt) {
 point_t::~point_t() {
 }
 
+void point_t::set(const point_t& pt) {
+    this->x = pt.getX();
+    this->y = pt.getY();
+}
+
 // methodes
 void point_t::translater(const point_t pt) {
     this->x = pt.getX();
@@ -27,7 +32,6 @@ void point_t::translater(const int abs, const int ord) {
 }
 
 // surcharge operators
-point_t point_t::operator+=(const point_t pt) {
+void point_t::operator+=(const point_t& pt) {
     this->translater(pt);
-    return *this;
 }

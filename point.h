@@ -11,11 +11,12 @@ public:
     point_t(const point_t&);
 
     // destructor
-    ~point_t() {}
+    ~point_t();
 
     // seters
     void setX(const int p) {x = p;}
     void setY(const int p) {y = p;}
+    void set(const point_t&);
 
     // geters
     int getX()const {return x;}
@@ -26,7 +27,7 @@ public:
     void translater(const int, const int);
 
     // surcharge operators
-    point_t operator+=(const point_t);
+    void operator+=(const point_t&);
 };
 
 #endif
