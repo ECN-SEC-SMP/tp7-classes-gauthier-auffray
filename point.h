@@ -4,21 +4,26 @@
 class point_t {
 private:
     int x, y;
+    int& ref = x;
 public:
-    point_t(int, int);
-    ~point_t();
+    // constructors
+    point_t(int abs = 0, int odr = 0);
+    point_t(const point_t&);
+
+    // destructor
+    ~point_t() {}
 
     // seters
-    void setX(int p) {x = p;}
-    void setY(int p) {y = p;}
+    void setX(const int p) {x = p;}
+    void setY(const int p) {y = p;}
 
     // geters
-    int getX() {return x;}
-    int getY() {return y;}
+    int getX()const {return x;}
+    int getY()const {return y;}
 
     // methodes
-    void translater(point_t);
-    void translater(int, int);
+    void translater(const point_t);
+    void translater(const int, const int);
 };
 
 #endif
